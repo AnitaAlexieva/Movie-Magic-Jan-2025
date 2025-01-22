@@ -1,0 +1,22 @@
+{
+  "name": "movie-magic-jan-2025",
+  "version": "1.0.0",
+  "description": "JS-Back-End Course WorkShop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnitaAlexieva/Movie-Magic-Jan-2025.git"
+  },
+  "homepage": "https://github.com/AnitaAlexieva/Movie-Magic-Jan-2025#readme",
+  "bugs": {
+    "url": "https://github.com/AnitaAlexieva/Movie-Magic-Jan-2025/issues"
+  }
+}
