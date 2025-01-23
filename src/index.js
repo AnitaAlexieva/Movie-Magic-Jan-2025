@@ -10,7 +10,9 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
-app.use(express.static('src/public'))
+//express static да отговаря на route, който да започва със статик 
+//ако нещо отговаря на static да го търси в src/public
+app.use('/static', express.static('src/public'))
 
 app.get('/', (req, res) => {
     res.render('home', { layout: false }); // Това ще зареди home.hbs без layout
