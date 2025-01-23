@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import movies from '../movie.js'
+import movies from '../movie.js' //temporary solution
 const router = Router()
 
 
