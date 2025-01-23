@@ -15,7 +15,11 @@ app.set('views', './src/views');
 app.use('/static', express.static('src/public'))
 
 app.get('/', (req, res) => {
-    res.render('home', { layout: false }); // Това ще зареди home.hbs без layout
-});
+    res.render('home')
+})
+
+//app.get('/', (req, res) => {
+//   res.render('home', { layout: false }); // Това ще зареди home.hbs без layout
+//});
 
 app.listen(5000, () => console.log('Server is listening on http://localhost:5000...'));
