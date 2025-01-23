@@ -1,5 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
+import homecontroller from './controllers/home-controller.js'
 
 const app = express();
 
@@ -14,13 +15,8 @@ app.set('views', './src/views');
 //ако нещо отговаря на static да го търси в src/public
 app.use('/static', express.static('src/public'))
 
-app.get('/', (req, res) => {
-    res.render('home')
-})
+app.use(homecontroller)
 
-app.get('/about', (req, res) => {
-res.render('about'); // Това ще зареди home.hbs без layout
-});
 
 app.get('*', (req, res) => {
     res.render('404')
