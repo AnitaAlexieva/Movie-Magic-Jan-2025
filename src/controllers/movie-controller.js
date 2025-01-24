@@ -10,10 +10,11 @@ movieController.get('/create', (req, res)=>{
 })
 
 movieController.post('/create', (req,res) =>{
-    console.log('POST MOVIE')
-
     const newMovie = req.body
-    res.end()
+
+    movieService.create(newMovie)
+
+    res.redirect('/')
 })
 
 movieController.get('/:movieId/details', (req, res) => {
