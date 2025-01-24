@@ -8,7 +8,7 @@ export default [
         imageUrl:'/static/img/jungle-cruise.jpeg',
         director: ' Jaume Collet-Serra',
         year: '2021',
-        rating: '6.6',
+        rating: 6.6,
         category: ' movie'
     },
     {
@@ -19,7 +19,7 @@ export default [
         imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiddrtCCmWTzGOLqlNe5pgh7L5XSTpOKgIdA&s',
         director: ' Zack Snyder',
         year: '2013',
-        rating:'7.1',
+        rating: 7.1,
         category: ' movie'
     },
     {
@@ -30,7 +30,7 @@ export default [
         director: 'Bryan Singer',
         year: '2000',
         imageUrl: 'https://m.media-amazon.com/images/M/MV5BZjcwMDIyNjctMDVmNS00MzkyLTgxMDMtNTFmNTk0NDkyNzdjXkEyXkFqcGc@._V1_.jpg',
-        rating: '9.3',
+        rating: 9.3,
         description: 'In a world where mutants (evolved super-powered humans) exist and are discriminated against, two groups form for an inevitable clash: the supremacist Brotherhood, and the pacifist X-Men.'
       }
 ]
