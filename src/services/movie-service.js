@@ -2,8 +2,13 @@ import movie from "../movie.js";
 import {v4 as uuid} from 'uuid'
 
 const movieService = {
-    getAll(){
-        return movie
+    getAll(filter = {}){
+        let result = movie
+
+        if(filter.search){
+            result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()))
+        }
+        return result
     },
     findOneMovie(movieId){
         const result = movie.find(movie => movie.id === movieId)
