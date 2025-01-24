@@ -3,6 +3,9 @@ import movieService from "../services/movie-service.js";
 
 const movieController = Router()
 
+movieController.get('/search', (req,res) => {
+    res.render('search')
+})
 
 //на /create искаме да се изпълни този action
 movieController.get('/create', (req, res)=>{
