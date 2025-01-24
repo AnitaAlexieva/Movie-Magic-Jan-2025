@@ -15,6 +15,9 @@ app.set('views', './src/views');
 //ако нещо отговаря на static да го търси в src/public
 app.use('/static', express.static('src/public'))
 
+//Learn express to parse from data
+app.use(express.urlencoded({extended:false}))
+
 app.use(routes)
   
 app.listen(5001, () => console.log('Server is listening on http://localhost:5001...'));
