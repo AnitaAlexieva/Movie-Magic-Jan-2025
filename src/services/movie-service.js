@@ -2,6 +2,9 @@ import movie from "../movie.js";
 import {v4 as uuid} from 'uuid'
 
 const movieService = {
+    getAll(){
+        return movie
+    },
     findOneMovie(movieId){
         const result = movie.find(movie => movie.id === movieId)
     
