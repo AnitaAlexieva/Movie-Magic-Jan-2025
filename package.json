@@ -23,6 +23,7 @@
     "D": "^1.0.0",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
+    "mongoose": "^8.9.6",
     "uuid": "^11.0.5"
   },
   "devDependencies": {
