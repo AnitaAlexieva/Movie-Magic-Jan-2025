@@ -12,9 +12,9 @@ try{
     const uri = 'mongodb://localhost:27017/magic-movies-jan2025'
     await mongoose.console(uri)
 
-    
+    console.log('Connected to the DB successfully')
 }catch(err){
-
+    console.error(error.message)
 }
 
 //handklebars configuration
