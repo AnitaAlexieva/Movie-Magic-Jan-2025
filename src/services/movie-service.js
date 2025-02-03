@@ -1,5 +1,3 @@
-import movie from "../movie.js";
-// import {v4 as uuid} from 'uuid'
 import Movie from "../models/Movie.js";
 
 const movieService = {
