@@ -13,7 +13,7 @@ const movieSchema  = new Schema({
 })
 
 //create model
-const Movie = model('Movie', model)
+const Movie = model('Movie', movieSchema)
 
 //expprt model
 export default Movie
