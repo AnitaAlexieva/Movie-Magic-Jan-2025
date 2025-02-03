@@ -24,13 +24,15 @@ const movieService = {
     },
     create(movieData){
         //добавяме в movie.js новосъздадения филм
-ю
-
-        movie.push({
+        const result = Movie.create({
             ...movieData,
-            rating:Number(movieData.rating)
+            rating:Number(movieData.rating),
+            year:Number(movieData.year)
+
         })
-        return newId
+        return result;
+
+      
     }
 }
 
