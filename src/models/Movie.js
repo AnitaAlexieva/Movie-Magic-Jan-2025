@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model , Types} from "mongoose";
 
 //create Shema
 const movieSchema  = new Schema({
@@ -9,7 +9,13 @@ const movieSchema  = new Schema({
     year: Number,
     imageUrl:String,
     rating:Number,
-    description:String
+    description:String,
+    //всеки филм ще има колекция(масив) от id, 
+    // като всяко id ще представлява връзка(референция) към  оопределение участици
+    casts: [{
+        type: Types.ObjectId,
+        ref:'Cast'
+    }]
 })
 
 //create model
