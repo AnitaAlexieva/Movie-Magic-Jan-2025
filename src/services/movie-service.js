@@ -20,6 +20,9 @@ const movieService = {
     
         return result
     },
+    getOneWithCasts(movieId){
+        return this.getOneMovie(movieId).populate('casts')
+    },
     create(movieData){
         //добавяме в movie.js новосъздадения филм
         const result = Movie.create({
