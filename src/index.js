@@ -5,6 +5,7 @@ import showRatingHelper from './helpers/rating-helper.js';
 import mongoose from 'mongoose';
 import 'dotenv/config'
 import cookieParser from 'cookie-parser';
+import { authMiddleware } from './middlewares/auth-middleware.js';
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use('/static', express.static('src/public'))
 //Learn express to parse from data
 app.use(express.urlencoded({extended:false}))
 app.use(cookieParser())
+app.use(authMiddleware)
 
 //setup routes
 app.use(routes)
