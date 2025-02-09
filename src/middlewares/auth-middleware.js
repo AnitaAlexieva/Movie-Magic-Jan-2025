@@ -25,6 +25,8 @@ export const authMiddleware = (req, res, next) =>{
 
     }catch(err){
         //TODO: invalid token
+        res.clearCookie('auth')
+        res.redirect('/auth/login')
     }
 
     //DONT Forget guest users
