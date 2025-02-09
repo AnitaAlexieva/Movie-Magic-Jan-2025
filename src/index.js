@@ -4,6 +4,7 @@ import routes from './routes.js'
 import showRatingHelper from './helpers/rating-helper.js';
 import mongoose from 'mongoose';
 import 'dotenv/config'
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -36,9 +37,9 @@ app.set('views', './src/views');
 //express static да отговаря на route, който да започва със статик 
 //ако нещо отговаря на static да го търси в src/public
 app.use('/static', express.static('src/public'))
-
 //Learn express to parse from data
 app.use(express.urlencoded({extended:false}))
+app.use(cookieParser())
 
 //setup routes
 app.use(routes)
