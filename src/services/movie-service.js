@@ -1,4 +1,5 @@
 import Movie from "../models/Movie.js";
+import mongoose from "mongoose";
 
 const movieService = {
      getAll(filter = {}){
@@ -23,12 +24,13 @@ const movieService = {
     getOneWithCasts(movieId){
         return this.getOneMovie(movieId).populate('casts')
     },
-    create(movieData){
+    create(movieData, creatorId){
         //добавяме в movie.js новосъздадения филм
         const result = Movie.create({
             ...movieData,
             rating:Number(movieData.rating),
-            year:Number(movieData.year)
+            year:Number(movieData.year),
+            creator: new mongoose.Types.ObjectId(creatorId)
 
         })
         return result;
