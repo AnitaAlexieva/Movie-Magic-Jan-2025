@@ -71,11 +71,32 @@ movieController.get('/:movieId/delete',async (req, res) =>{
     res.redirect('/')
 })
 
+function getCategoriesViewData(category){
+    const categoriesMap = {
+        'tv-show':'TV Show',
+        'animation':'Animation',
+        'movie':'Movie',
+        'documentary':'Documentary',
+        'short-film':'Short Film'
+    }
+
+    const categories = Object.keys(categoriesMap).map(value =>({
+        value,
+        label:categoriesMap[value],
+        selected:value === category ? 'selected':'',
+    }))
+    console.log("Current category:", category);
+    return categories
+}
+
 movieController.get('/:movieId/edit',async (req,res) =>{
     const movieId = req.params.movieId
     const movie = await movieService.getOneMovie(movieId)
 
-    res.render('movie/edit', {movie})
+    const categories = getCategoriesViewData(movie.category)
+
+    console.log(categories)
+    res.render('movie/edit', {movie, categories})
 })
 
 export default movieController
