@@ -26,13 +26,23 @@ movieController.post('/create', async(req,res) =>{
 })
 
 movieController.get('/:movieId/details', async (req, res) => {
-    console.log(req.user)
-    const movieId = req.params.movieId;
-    const movie =  await movieService.getOneWithCasts(movieId )
+    ; // Проверка дали user е дефиниран
     
+    if (!req.user) {
+        return res.redirect('/auth/login'); // Ако няма логнат потребител
+    }
 
-    res.render('movie/details', {movie})
-})
+    const movieId = req.params.movieId;
+    const movie = await movieService.getOneWithCasts(movieId);
+
+    
+    res.render('movie/details', {
+        movie,
+        isCreator: Boolean(movie.creator?.toString() === req.user.id.toString()), // Проверка дали е създател
+    });
+    
+});
+
 
 movieController.get('/:movieId/attach-cast',async (req, res) =>{
     const movieId = req.params.movieId

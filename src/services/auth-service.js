@@ -13,7 +13,7 @@ export default {
         //Check user exists
         const user = await User.findOne({email})
         if(!user){
-            return new Error('Invalid email or password!')
+            throw new Error('Invalid email or password!')
         }
 
         //Check password is correct

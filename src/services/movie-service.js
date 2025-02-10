@@ -30,9 +30,9 @@ const movieService = {
             ...movieData,
             rating:Number(movieData.rating),
             year:Number(movieData.year),
-            creator: new mongoose.Types.ObjectId(creatorId)
-
+            creator: creatorId // Конвертира ID-то
         })
+    
         return result;
     },
     async attachCast(movieId, castId){
