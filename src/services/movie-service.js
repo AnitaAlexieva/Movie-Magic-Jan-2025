@@ -35,7 +35,7 @@ const movieService = {
     
         return result;
     },
-    async attachCast(movieId, castId){
+    attachCast(movieId, castId){
         //Attach #1
         // const movie = await Movie.findById(movieId)
         // if(movie.casts.includes(castId)){
@@ -48,7 +48,9 @@ const movieService = {
 
         //Attach #2
         return Movie.findByIdAndUpdate(movieId, {$push:{casts:castId}})
-
+    },
+    delete(movieId){
+        return Movie.findByIdAndDelete(movieId)
     }
 }
 
