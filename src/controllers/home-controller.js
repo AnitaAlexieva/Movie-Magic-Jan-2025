@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/about', (req, res) => {
-res.render('about'); // Това ще зареди home.hbs без layout
+res.render('about', {pageTitle : 'About'}); // Това ще зареди home.hbs без layout
 });
 
 export default router

@@ -30,6 +30,12 @@ export const authMiddleware = (req, res, next) =>{
         res.redirect('/auth/login')
     }
 
-    //DONT Forget guest users
+}
+//DONT Forget guest users
 
+export const isAuth  = (req, res, next) =>{
+    if(!req.user){
+        return res.redirect('/auth/login')
+    }
+    next()
 }
